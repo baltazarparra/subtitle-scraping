@@ -1,3 +1,4 @@
+const creds = require('../creds')
 const fs = require('fs')
 const puppeteer = require('puppeteer')
 
@@ -7,14 +8,14 @@ async function run() {
   await page.goto('http://legendas.tv/login')
 
   console.log('Entering in site...')
-  await page.screenshot({ path: 'enter.png'})
+  await page.screenshot({ path: '../screens/enter.png'})
 
-  await page.type('#UserUsername', 'fliperapp')
-  await page.type('#UserPassword', '123456')
+  await page.type('#UserUsername', creds.username)
+  await page.type('#UserPassword', creds.password)
   await page.click('#UserLoginForm > button')
 
   console.log('Loging...')
-  await page.screenshot({ path: 'login.png'})
+  await page.screenshot({ path: '../screens/login.png'})
 
   browser.close()
 }

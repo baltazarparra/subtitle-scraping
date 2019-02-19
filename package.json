@@ -2,7 +2,7 @@
   "name": "subtitle-scraping",
   "version": "1.0.0",
   "description": "Data extraction with puppeteer and nodejs",
-  "main": ".eslintrc.js",
+  "main": "src/tarantula.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

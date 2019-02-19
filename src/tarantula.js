@@ -1,3 +1,4 @@
+const fs = require('fs')
 const puppeteer = require('puppeteer')
 
 const scrape = async () => {
@@ -17,5 +18,7 @@ const scrape = async () => {
 
 scrape()
   .then((result) => {
-    console.log(result)
+    fs.appendFile('simpsons-subtitle.txt', result, (err) => {
+      if(err) console.log(err)
+    })
   })

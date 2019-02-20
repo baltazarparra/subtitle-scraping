@@ -6,6 +6,8 @@ Data extraction with puppeteer and nodejs
 # Init project
 
 ```
+git clone https://github.com/baltazarparra/subtitle-scraping.git
+cd subtitle-scraping
 npm i
 ```
 

@@ -1,6 +1,5 @@
 const entries = require('../entries')
 const puppeteer = require('puppeteer')
-const path = require('path')
 const fs = require('fs')
 
 const scraping = async () => {

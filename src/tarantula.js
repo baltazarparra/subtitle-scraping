@@ -1,19 +1,22 @@
-const entries = require('../entries')
 const puppeteer = require('puppeteer')
 const fs = require('fs')
+require('dotenv').config()
 
 const scraping = async () => {
 
   const browser = await puppeteer.launch({headless: true})
   const page = await browser.newPage()
-  await page.goto(`${entries.url}${entries.loginRoute}`)
+  await page.goto(`${process.env.URL}${process.env.LOGIN_ROUTE}`)
 
   console.log('Open login page...')
 
+  const login = process.env.USERNAME
+  const password = process.env.PASSWORD
+
   await page.waitFor('#UserUsername')
-  await page.type('#UserUsername', entries.username)
+  await page.type('#UserUsername', login)
   await page.waitFor('#UserPassword')
-  await page.type('#UserPassword', entries.password)
+  await page.type('#UserPassword', password)
 
   console.log('Enter login info...')
 
@@ -24,7 +27,7 @@ const scraping = async () => {
 
   console.log('Logged...')
 
-  await page.goto(`${entries.url}${entries.searchRoute}/${entries.searchTerm}`)
+  await page.goto(`${process.env.URL}${process.env.SEARCH_ROUTE}/${process.env.SEARCH_TERM}`)
 
   console.log('Searching term...')
 

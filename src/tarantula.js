@@ -1,5 +1,6 @@
 const entries = require('../entries')
 const puppeteer = require('puppeteer')
+const path = require('path')
 const fs = require('fs')
 
 const scraping = async () => {
@@ -9,7 +10,9 @@ const scraping = async () => {
   await page.goto(`${entries.url}${entries.loginRoute}`)
 
   console.log('Open login page...')
-  await page.screenshot({ path: '../screens/enter.png'})
+  await page.screenshot({
+    path: path.resolve(__dirname, '../screens/enter.png')
+  })
 
   await page.type('#UserUsername', entries.username)
   await page.type('#UserPassword', entries.password)
@@ -22,12 +25,16 @@ const scraping = async () => {
   ])
 
   console.log('Loged...')
-  await page.screenshot({ path: '../screens/login.png'})
+  await page.screenshot({
+    path: path.resolve(__dirname, '../screens/login.png')
+  })
 
   await page.goto(`${entries.url}${entries.searchRoute}/${entries.searchTerm}`)
 
   console.log('Searching term...')
-  await page.screenshot({ path: '../screens/searched.png'})
+  await page.screenshot({
+    path: path.resolve(__dirname, '../screens/searched.png')
+  })
 
   const results = await page.evaluate(() => {
 

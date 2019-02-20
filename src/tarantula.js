@@ -20,7 +20,7 @@ const scraping = async () => {
     page.waitForNavigation()
   ])
 
-  console.log('Loged...')
+  console.log('Logged...')
 
   await page.goto(`${entries.url}${entries.searchRoute}/${entries.searchTerm}`)
 
@@ -34,15 +34,18 @@ const scraping = async () => {
       const name = item.querySelector('p > a').innerText
       const link = item.querySelector('p > a').href
       const img = item.querySelector('img').src
+      const directLink = link.replace(/download/g, '$&arquivo')
       subtitles.push({
         name,
-        link,
+        directLink,
         img
       })
     })
 
     return subtitles
   })
+
+  console.log('Done!')
 
   await browser.close()
 

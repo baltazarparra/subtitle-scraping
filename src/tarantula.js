@@ -24,7 +24,7 @@ const scraping = async () => {
   console.log('Loged...')
   await page.screenshot({ path: '../screens/login.png'})
 
-  await page.goto(`${entries.url}${entries.searchRoute}${entries.searchTerm}`)
+  await page.goto(`${entries.url}${entries.searchRoute}/${entries.searchTerm}`)
 
   console.log('Searching term...')
   await page.screenshot({ path: '../screens/searched.png'})

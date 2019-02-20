@@ -4,5 +4,5 @@ module.exports = {
   url: 'http://legendas.tv',
   loginRoute: '/login',
   searchRoute: '/busca',
-  searchTerm: '/simpsons'
+  searchTerm: 'simpsons'
 }

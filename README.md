@@ -2,6 +2,12 @@
 
 Data extraction with puppeteer and nodejs
 
+# Init project
+
+```
+npm i
+```
+
 # Run
 
 ```

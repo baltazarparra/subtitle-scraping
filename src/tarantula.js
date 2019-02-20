@@ -53,8 +53,8 @@ const scraping = async () => {
 }
 
 scraping()
-  .then((item) => {
-    fs.appendFile('subtitles.json', JSON.stringify(item), (err) => {
+  .then((list) => {
+    fs.appendFile('subtitles.json', JSON.stringify(list), (err) => {
       if(err) console.log(err)
     })
   })

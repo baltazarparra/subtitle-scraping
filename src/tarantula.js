@@ -10,14 +10,16 @@ const scraping = async () => {
 
   console.log('Open login page...')
 
+  await page.waitFor('#UserUsername')
   await page.type('#UserUsername', entries.username)
+  await page.waitFor('#UserPassword')
   await page.type('#UserPassword', entries.password)
 
   console.log('Enter login info...')
 
   await Promise.all([
-    page.click('#UserLoginForm > button'),
-    page.waitForNavigation()
+    page.waitForNavigation(),
+    page.click('#UserLoginForm > button')
   ])
 
   console.log('Logged...')

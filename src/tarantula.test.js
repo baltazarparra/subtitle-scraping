@@ -2,12 +2,12 @@ const puppeteer = require('puppeteer')
 require('dotenv').config()
 
 beforeAll(async () => {
-  browser = await puppeteer.launch({ headless: true })
+  browser = await puppeteer.launch({ headless: false })
   page = await browser.newPage()
   await page.goto('http://legendas.tv/login')
 })
 
-describe('Check has selectors', () => {
+describe('Check has selectors and elements', () => {
 
   test('Has title', async () => {
     const title = await page.title()
@@ -45,8 +45,25 @@ describe('Check has selectors', () => {
 
     const loginLink = await page.$eval('.login > a', el => el.textContent)
     expect(loginLink).toEqual('baltazarparra')
-  }, 10000)
+  }, 20000)
 
+  test('Has search input', async () => {
+    const searchInput = await page.$eval('#search-box', el => el ? true : false)
+    expect(searchInput).toBe(true)
+  })
+
+  test('Has search submit', async () => {
+    const searchSubmit = await page.$eval('.icon_zoom', el => el ? true : false)
+    expect(searchSubmit).toBe(true)
+  })
+
+  test('Searching its fine', async () => {
+    await page.type('#search-box', 'hannibal')
+    await page.keyboard.press('Enter')
+    await page.waitFor('.number_1')
+    const hasSubtitle = await page.$eval('.number_1', el => el ? true : false)
+    expect(hasSubtitle).toBe(true)
+  }, 40000)
 })
 
 afterAll(() => {

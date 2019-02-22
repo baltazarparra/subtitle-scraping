@@ -1,13 +1,10 @@
 const puppeteer = require('puppeteer')
 require('dotenv').config()
 
-let browser
-let page
-
-beforeAll(async () => {
-  browser = await puppeteer.launch({ headless: false })
+beforeAll(async function () {
+  const browser = await puppeteer.launch({ headless: false })
   global.__BROWSER__ = browser
-  page = await browser.newPage()
+  const page = await browser.newPage()
   await page.goto('http://legendas.tv/login')
 })
 

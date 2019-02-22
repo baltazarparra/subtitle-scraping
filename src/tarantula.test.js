@@ -12,27 +12,27 @@ describe('Check has selectors and elements', () => {
   test('Has title', async () => {
     const title = await page.title()
     expect(title).toBe('Login - Legendas TV')
-  })
+  }, 20000)
 
   test('Has form', async () => {
     const form = await page.$eval('#UserLoginForm', el => el ? true : false)
     expect(form).toBe(true)
-  })
+  }, 20000)
 
   test('Has login input', async () => {
     const loginInput = await page.$eval('#UserUsername', el => el ? true : false)
     expect(loginInput).toBe(true)
-  })
+  }, 20000)
 
   test('Has password input', async () => {
     const passwordInput = await page.$eval('#UserPassword', el => el ? true : false)
     expect(passwordInput).toBe(true)
-  })
+  }, 20000)
 
   test('Has submit button', async () => {
     const submitButton = await page.$eval('#UserLoginForm .btn', el => el ? true : false)
     expect(submitButton).toBe(true)
-  })
+  }, 20000)
 
   test('Login without error', async () => {
     await page.type('#UserUsername', 'baltazarparra')
@@ -50,12 +50,12 @@ describe('Check has selectors and elements', () => {
   test('Has search input', async () => {
     const searchInput = await page.$eval('#search-box', el => el ? true : false)
     expect(searchInput).toBe(true)
-  })
+  }, 20000)
 
   test('Has search submit', async () => {
     const searchSubmit = await page.$eval('.icon_zoom', el => el ? true : false)
     expect(searchSubmit).toBe(true)
-  })
+  }, 20000)
 
   test('Searching its fine', async () => {
     await page.type('#search-box', 'hannibal')

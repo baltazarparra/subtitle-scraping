@@ -27,7 +27,7 @@ const scraping = async () => {
 
   console.log('Logged...')
 
-  await page.goto(`${process.env.URL}${process.env.SEARCH_ROUTE}/${process.env.SEARCH_TERM}`)
+  await page.goto('http://legendas.tv/busca/simpsons')
 
   console.log('Searching term...')
 

@@ -1,7 +1,7 @@
 # 🕷 Subtitle-scraping
 
 Data extraction with puppeteer and nodejs
-*Node version: ^11.0*
+:point_right: **Node version: ^11.0**
 
 # Init project
 
@@ -11,7 +11,7 @@ cd subtitle-scraping
 npm i
 ```
 
-*Create a .env in /src following sample, with your credentials*
+:point_right: **Create a .env in /src following sample, with your credentials**
 
 # Run
 

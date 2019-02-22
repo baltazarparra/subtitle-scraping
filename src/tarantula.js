@@ -6,7 +6,7 @@ const scraping = async () => {
 
   const browser = await puppeteer.launch({headless: true})
   const page = await browser.newPage()
-  await page.goto(`${process.env.URL}${process.env.LOGIN_ROUTE}`)
+  await page.goto('http://legendas.tv/login')
 
   console.log('Open login page...')
 

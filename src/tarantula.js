@@ -14,9 +14,9 @@ const scraping = async () => {
   const password = process.env.PASSWORD
 
   await page.waitFor('#UserUsername')
-  await page.type('#UserUsername', login)
+  await page.type('#UserUsername', 'baltazarparra')
   await page.waitFor('#UserPassword')
-  await page.type('#UserPassword', password)
+  await page.type('#UserPassword', 'zxc123')
 
   console.log('Enter login info...')
 

@@ -17,3 +17,9 @@ npm i
 cd src
 node tarantula.js
 ```
+
+# Run tests
+
+```
+npm test
+```

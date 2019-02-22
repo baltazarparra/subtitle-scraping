@@ -4,7 +4,7 @@
   "description": "Data extraction with puppeteer and nodejs",
   "main": "src/tarantula.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/baltazarparra/subtitle-scraping#readme",
   "devDependencies": {
     "eslint": "^5.14.1",
+    "jest": "^24.1.0",
     "puppeteer": "^1.12.2"
   },
   "dependencies": {

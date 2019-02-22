@@ -11,7 +11,7 @@ cd subtitle-scraping
 npm i
 ```
 
-:point_right: **Create a .env in /src following sample, with your credentials**
+:point_right: **Create a .env in /src following sample in /src/.env.sample, with your credentials**
 
 # Run
 

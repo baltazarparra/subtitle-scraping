@@ -6,7 +6,7 @@ const scraping = async () => {
 
   const browser = await puppeteer.launch({headless: true})
   const page = await browser.newPage()
-  await page.goto('http://legendas.tv/login')
+  await page.goto(`${process.env.URL}${process.env.LOGIN_ROUTE}`)
 
   console.log('Open login page...')
 
@@ -14,9 +14,9 @@ const scraping = async () => {
   const password = process.env.PASSWORD
 
   await page.waitFor('#UserUsername')
-  await page.type('#UserUsername', 'baltazarparra')
+  await page.type('#UserUsername', login)
   await page.waitFor('#UserPassword')
-  await page.type('#UserPassword', 'zxc123')
+  await page.type('#UserPassword', password)
 
   console.log('Enter login info...')
 
@@ -27,7 +27,7 @@ const scraping = async () => {
 
   console.log('Logged...')
 
-  await page.goto('http://legendas.tv/busca/simpsons')
+  await page.goto(`${process.env.URL}${process.env.SEARCH_ROUTE}/${process.env.SEARCH_TERM}`)
 
   console.log('Searching term...')
 

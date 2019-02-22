@@ -50,7 +50,7 @@ const scraping = async () => {
     return subtitles
   })
 
-  console.log('Done!')
+  console.log('Done! Json in src/subtitles.json')
 
   await browser.close()
 

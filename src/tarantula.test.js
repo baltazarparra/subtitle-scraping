@@ -60,7 +60,7 @@ describe('Testing scraping flow', () => {
     expect(searchSubmit).toBe(true)
   }, 20000)
 
-  test('Searching work', async () => {
+  test('Search is working', async () => {
     await page.type('#search-box', 'hannibal')
     await page.keyboard.press('Enter')
     await page.waitFor('.number_1')

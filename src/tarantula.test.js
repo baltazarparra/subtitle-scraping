@@ -10,7 +10,7 @@ beforeAll(async () => {
   await page.goto('http://legendas.tv/login')
 })
 
-describe('Check has selectors and elements', () => {
+describe('Testing scraping flow', () => {
 
   test('Has title', async () => {
     const title = await page.title()
@@ -60,7 +60,7 @@ describe('Check has selectors and elements', () => {
     expect(searchSubmit).toBe(true)
   }, 20000)
 
-  test('Searching its fine', async () => {
+  test('Searching work', async () => {
     await page.type('#search-box', 'hannibal')
     await page.keyboard.press('Enter')
     await page.waitFor('.number_1')

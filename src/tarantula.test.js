@@ -8,7 +8,7 @@ beforeAll(async () => {
   browser = await puppeteer.launch({ headless: false })
   page = await browser.newPage()
   await page.goto('http://legendas.tv/login')
-})
+}, 20000)
 
 describe('Testing scraping flow', () => {
 
